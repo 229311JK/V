@@ -1,6 +1,6 @@
 V.ino is a dynamic easy-2-use watchface sketch 4-SQFMI watchy.
 
-Dedicated-2... Perkins & all those who've earned their MACK hammer.
+Dedicated-2... Perkins & all those who've earned their MACK hammer or traveled to the Underverse.
 
 ![image](https://github.com/229311JK/V/assets/140860942/5ef2bad3-6ecc-4d17-86d9-a4d1fbd57e37)
 ![image](https://github.com/229311JK/V/assets/140860942/8d7a2404-cd5d-4797-990f-799d2bf779f7)
