@@ -3,6 +3,7 @@ V.ino is a dynamic watchface 4-watchy, enjoy.  229311JK
 Dedicated-2 to all those who earned a MACK hammer...
 
 ![image](https://github.com/229311JK/V/assets/140860942/5ef2bad3-6ecc-4d17-86d9-a4d1fbd57e37)
+![image](https://github.com/229311JK/V/assets/140860942/8d7a2404-cd5d-4797-990f-799d2bf779f7)
 
 
 Special thanks-2:
