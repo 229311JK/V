@@ -8,13 +8,13 @@ const uint8_t BATTERY_SEGMENT_SPACING = 9;
 void V::drawWatchFace()   {
   if(currentTime.Minute >= 29)    {
     display.fillScreen(GxEPD_BLACK);
-    display.drawBitmap(0, 0, V_Face, 200, 200, GxEPD_BLACK);
+    display.drawBitmap(0, 0, V_Face, 200, 200, GxEPD_WHITEK);
     }
     
   
   if(currentTime.Minute <= 31)    {
     display.fillScreen(GxEPD_BLACK);
-    display.drawBitmap(0, 0, V_Face, 200, 200, GxEPD_BLACK);
+    display.drawBitmap(0, 0, V_Face, 200, 200, GxEPD_WHITE);
     }
     drawDate();
     drawTime();
@@ -71,7 +71,7 @@ void V::drawTime()  {
   }
 
 void V::drawBattery()   {
-    display.drawBitmap(154, 13, battery, 37, 21, GxEPD_WHITE);
+    display.drawBitmap(154, 13, battery, 37, 21, GxEPD_BLACK);
     display.fillRect(159, 18, 27, BATTERY_SEGMENT_HEIGHT, GxEPD_WHITE);
     int8_t batteryLevel = 0;
     float VBAT = getBatteryVoltage();
@@ -89,6 +89,6 @@ void V::drawBattery()   {
     }
 
       for(int8_t batterySegments = 0; batterySegments < batteryLevel; batterySegments++){
-          display.fillRect(159 + (batterySegments * BATTERY_SEGMENT_SPACING), 18, BATTERY_SEGMENT_WIDTH, BATTERY_SEGMENT_HEIGHT, GxEPD_WHITE);
+          display.fillRect(159 + (batterySegments * BATTERY_SEGMENT_SPACING), 18, BATTERY_SEGMENT_WIDTH, BATTERY_SEGMENT_HEIGHT, GxEPD_BLACK);
     }
 }
