@@ -5,19 +5,23 @@ const uint8_t BATTERY_SEGMENT_HEIGHT = 11;
 const uint8_t BATTERY_SEGMENT_SPACING = 9;
 
 void V::drawWatchFace()   {
-    
-    display.fillScreen(GxEPD_BLACK);
-    display.setTextColor(GxEPD_WHITE);
 
   if(currentTime.Minute >= 1 && currentTime.Minute <= 29)   {
+    display.fillScreen(GxEPD_BLACK);
     display.drawBitmap(0, 0, V_Face, 200, 200, GxEPD_WHITE);
+    display.setTextColor(GxEPD_WHITE);
     }
   if(currentTime.Minute == 0 && currentTime.Minute == 30)   {
-    display.drawBitmap(0, 0, V_Reaper, 100, 100, GxEPD_WHITE);
+    display.fillScreen(GxEPD_WHITE);
+    display.drawBitmap(0, 0, V_Reaper, 100, 100, GxEPD_BLACK);
+    display.setTextColor(GxEPD_BLACK);
     }
   if(currentTime.Minute >= 31 && currentTime.Minute <= 59)   {
+    display.fillScreen(GxEPD_BLACK);
     display.drawBitmap(0, 0, V_Face, 200, 200, GxEPD_WHITE);
+    display.setTextColor(GxEPD_WHITE);
     }
+    
     drawDate();
     drawTime();
     drawBattery();
