@@ -3,8 +3,7 @@ Sketch vibrates @the hour beginning & middle.
 2-adjust: Watchy.cpp line 35 2-whats below
 
 if (currentTime.Minute == 0 || currentTime.Minute == 30){
- // The RTC wakes us up once per minute
-    vibMotor(75, 4);
+
     
 Dedicated-2... All those who've earned a MACK hammer or witnessed to the UnderVerse...
 
