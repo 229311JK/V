@@ -1,6 +1,6 @@
 
-#ifndef V_SETTINGS_H
-#define V_SETTINGS_H
+#ifndef SETTINGS_H
+#define SETTINGS_H
 
 
 
