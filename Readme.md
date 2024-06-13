@@ -1,4 +1,5 @@
 V is just another easy-2-use/compile dynamic watchface 4-SQFMI watchy.
+
 Sketch vibrates @the hour beginning & middle.  
 2-adjust: Watchy.cpp line 35 2-whats below
 
