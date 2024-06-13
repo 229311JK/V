@@ -1,34 +1,59 @@
 #include "V.h"
 
+
 const uint8_t BATTERY_SEGMENT_WIDTH = 7;
 const uint8_t BATTERY_SEGMENT_HEIGHT = 11;
 const uint8_t BATTERY_SEGMENT_SPACING = 9;
 
+RTC_DATA_ATTR uint8_t vfaceNum;   
+
 void V::drawWatchFace()   {
+    
     display.fillScreen(GxEPD_BLACK);
     display.setTextColor(GxEPD_WHITE);
-
-  if(currentTime.Minute >= 0 && currentTime.Minute <= 1)   {
-    display.drawBitmap(0, 0, V_Reaper, 100, 100, GxEPD_WHITE);
-    }
-  if(currentTime.Minute >= 2 && currentTime.Minute <= 29)   {
-    display.drawBitmap(0, 0, V_Face, 200, 200, GxEPD_WHITE);
-    }
-  if(currentTime.Minute >= 30 && currentTime.Minute <= 31)   {
-    display.drawBitmap(0, 0, V_Reaper, 100, 100, GxEPD_WHITE);
-    }
-  if(currentTime.Minute >= 32 && currentTime.Minute <= 59)   {
-    display.drawBitmap(0, 0, V_Face, 200, 200, GxEPD_WHITE);
-    }
-    
-    drawDate();
     drawTime();
+    drawDate();
     drawBattery();
+}
+void V::drawTime()  {
 
-    for (uint8_t i=0; i<3; i++) {
-        // Reduce ghosting
-        display.display(true);
+    // Watchface time change structure...
+ if (currentTime.Minute % 60 == 0 || currentTime.Minute % 60 == 30)  { 
+  vfaceNum = (0);
+    } else {
+  vfaceNum = (1);
     }
+
+ switch(vfaceNum) {
+
+case 0:
+      display.drawBitmap(0, 22, V_Reaper, 80, 80, GxEPD_WHITE);
+    break;
+
+case 1: 
+      display.drawBitmap(0, 0, V_Main, 200, 200, GxEPD_WHITE);
+    break;
+ }
+
+      //  Time settings...
+    display.setFont(&SerifBold30);
+    display.setCursor(35, 145);
+      
+    int displayHour;
+    if(HOUR_12_24==12)  {
+      displayHour = ((currentTime.Hour+11)%12)+1;
+    } else {
+      displayHour = currentTime.Hour;
+    }
+    if(displayHour < 10)  {
+        display.print("0");
+    }
+    display.print(displayHour);
+    display.print(":");
+    if(currentTime.Minute < 10) {
+        display.print("0");
+    }
+    display.println(currentTime.Minute);
 }
 
 void V::drawDate()    {
@@ -48,30 +73,7 @@ void V::drawDate()    {
     display.setCursor(110 - w/2, 88);
     display.println(String(dateStr));
 
-    }
-
-void V::drawTime()  {
-    display.setFont(&SerifBold30);
-    display.setCursor(35, 145);
-
-    int displayHour;
-
-        if(HOUR_12_24==12)  {
-           displayHour = ((currentTime.Hour+11)%12)+1;
-      } else {
-           displayHour = currentTime.Hour;
-    }
-        if (currentTime.Hour < 10) {
-            display.print("0");
-    }
-    display.print(currentTime.Hour);
-    display.print(":");
-
-        if (currentTime.Minute < 10) {
-            display.print("0");
-    }
-    display.print(currentTime.Minute);
-  }
+}
 
 void V::drawBattery()   {
     display.drawBitmap(154, 13, battery, 37, 21, GxEPD_WHITE);
