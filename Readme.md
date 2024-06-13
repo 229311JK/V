@@ -5,7 +5,7 @@ Sketch vibrates @the hour beginning & middle.
 if (currentTime.Minute == 0 || currentTime.Minute == 30){
 
     
-Dedicated-2... All those who've earned a MACK hammer or witnessed to the UnderVerse...
+Dedicated-2... All those who've earned a MACK hammer or witnessed the UnderVerse...
 
 ![image](https://github.com/229311JK/V/assets/140860942/5ef2bad3-6ecc-4d17-86d9-a4d1fbd57e37)
 ![image](https://github.com/229311JK/V/assets/140860942/8d7a2404-cd5d-4797-990f-799d2bf779f7)
