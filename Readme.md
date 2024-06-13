@@ -1,26 +1,21 @@
-V.ino is a dynamic easy-2-use watchface sketch 4-SQFMI watchy.
+V.ino is just another easy-2-use/compile dynamic watchface 4-SQFMI watchy.
+Sketch vibrates @the hour beginning & middle.  2-adjust: Watchy.cpp line 35 2-whats below
 
-Dedicated-2... Perkins & all those who've earned their MACK hammer or traveled to the Underverse.
+if (currentTime.Minute == 0 || currentTime.Minute == 30){
+ // The RTC wakes us up once per minute
+    vibMotor(75, 4);
+    
+Dedicated-2... All those who've earned a MACK hammer or witnessed to the UnderVerse...
 
 ![image](https://github.com/229311JK/V/assets/140860942/5ef2bad3-6ecc-4d17-86d9-a4d1fbd57e37)
 ![image](https://github.com/229311JK/V/assets/140860942/8d7a2404-cd5d-4797-990f-799d2bf779f7)
 ![image](https://github.com/229311JK/V/assets/140860942/28fe2231-cc6b-49b9-92b9-61233b270c01)
 
-Special thanks-2:
+Special thanks-2; Code referneces:
 
-https://watchy.sqfmi.com/
+https://github.com/sqfmi?tab=repositories
 
-https://github.com/ropg/truetype2gfx
-
-https://github.com/javl/image2cpp
-
-Watchface code referneces:
-
-https://github.com/sqfmi/Watchy/tree/master/examples/WatchFaces/7_SEG
-
-https://github.com/charlesrocket/beastie
-
-https://github.com/anycam/SW_WatchyFace
+https://github.com/topics/watchy-faces
 
 Fonts used:
 
